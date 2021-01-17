@@ -42,6 +42,6 @@ public class Main {
         two.join();
         System.arraycopy(arr1, 0, arr, 0, h);
         System.arraycopy(arr2, 0, arr, h, h);
-        System.out.println("Время выполнения в 2 потока: " + (System.currentTimeMillis() - start) / 2 + " миллисекунд");
+        System.out.println("Время выполнения в 2 потока: " + (System.currentTimeMillis() - start) + " миллисекунд");
     }
 }
