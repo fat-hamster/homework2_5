@@ -25,7 +25,11 @@ public class Main {
         System.out.println("Выполнение в 1 поток...");
         start = System.currentTimeMillis();
         simple.start();
-        simple.join();
+        try {
+            simple.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("Время выполнения в 1 поток: " + (System.currentTimeMillis() - start) + " миллисекунд.");
     }
 
@@ -38,8 +42,16 @@ public class Main {
         CalculateArray two = new CalculateArray(arr2);
         one.start();
         two.start();
-        one.join();
-        two.join();
+        try {
+            one.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        try {
+            two.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.arraycopy(arr1, 0, arr, 0, h);
         System.arraycopy(arr2, 0, arr, h, h);
         System.out.println("Время выполнения в 2 потока: " + (System.currentTimeMillis() - start) + " миллисекунд");
