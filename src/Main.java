@@ -30,12 +30,12 @@ public class Main {
     }
 
     private static void second() throws InterruptedException {
+        System.out.println("Выполнение в 2 потока...");
+        start = System.currentTimeMillis();
         System.arraycopy(arr, 0, arr1, 0, h);
         System.arraycopy(arr, h, arr2, 0, h);
         CalculateArray one = new CalculateArray(arr1);
         CalculateArray two = new CalculateArray(arr2);
-        System.out.println("Выполнение в 2 потока...");
-        start = System.currentTimeMillis();
         one.start();
         two.start();
         one.join();
