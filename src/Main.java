@@ -22,7 +22,7 @@ public class Main {
 
     private static void first() throws InterruptedException {
         CalculateArray simple = new CalculateArray(arr);
-        System.out.println("Выполнению вычисление в 1 поток...");
+        System.out.println("Выполнение в 1 поток...");
         start = System.currentTimeMillis();
         simple.start();
         simple.join();
