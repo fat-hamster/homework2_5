@@ -6,7 +6,7 @@ public class Main {
     static float[] arr2 = new float[h];
     static long start;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         init();
 
         first();
@@ -20,7 +20,7 @@ public class Main {
         }
     }
 
-    private static void first() throws InterruptedException {
+    private static void first() {
         CalculateArray simple = new CalculateArray(arr);
         System.out.println("Выполнение в 1 поток...");
         start = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Время выполнения в 1 поток: " + (System.currentTimeMillis() - start) + " миллисекунд.");
     }
 
-    private static void second() throws InterruptedException {
+    private static void second() {
         System.out.println("Выполнение в 2 потока...");
         start = System.currentTimeMillis();
         System.arraycopy(arr, 0, arr1, 0, h);
